@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const UNSPLASH_API_KEY = import.meta.env?.VITE_UNSPLASH_API_KEY || '';
 
 async function fetchUnsplashImages() {
-  const imageElements = document.querySelectorAll('.service-card .img-container img');
-  const queries = ['house%20cleaning', 'commercial%20cleaning', 'cleaning'];
+  const imageElements = document.querySelectorAll('.hero-img, .service-card .img-container img');
+  const queries = ['cleaning%20service', 'residential%20cleaning', 'office%20cleaning', 'deep%20cleaning'];
 
   if (!UNSPLASH_API_KEY || UNSPLASH_API_KEY === 'YOUR_KEY_HERE') {
     console.warn("No Unsplash API Key found. Using placeholder images. Please add VITE_UNSPLASH_API_KEY to your .env file.");
