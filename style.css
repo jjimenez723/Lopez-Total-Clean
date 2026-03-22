@@ -123,6 +123,11 @@ section {
   color: var(--color-blue-primary);
 }
 
+.nav-cta {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+}
+
 /* Buttons */
 .btn-primary {
   background-color: var(--color-blue-primary);
@@ -130,7 +135,7 @@ section {
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
-  transition: all var(--transition-speed);
+  transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
   display: inline-block;
 }
 
@@ -399,8 +404,16 @@ footer {
   .navbar {
     padding: 1rem 2rem;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
   }
   
   .hero {

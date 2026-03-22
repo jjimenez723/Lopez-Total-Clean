@@ -9,24 +9,24 @@ const UNSPLASH_API_KEY = import.meta.env?.VITE_UNSPLASH_API_KEY || '';
 
 async function fetchUnsplashImages() {
   const imageElements = document.querySelectorAll('.service-card .img-container img');
-  const queries = ['house%20cleaning', 'commercial%20cleaning', 'deep%20cleaning'];
-  
+  const queries = ['house%20cleaning', 'commercial%20cleaning', 'cleaning'];
+
   if (!UNSPLASH_API_KEY || UNSPLASH_API_KEY === 'YOUR_KEY_HERE') {
     console.warn("No Unsplash API Key found. Using placeholder images. Please add VITE_UNSPLASH_API_KEY to your .env file.");
     return;
   }
 
   try {
-    const promises = queries.map(query => 
+    const promises = queries.map(query =>
       fetch(`https://api.unsplash.com/photos/random?query=${query}&orientation=landscape&client_id=${UNSPLASH_API_KEY}`)
         .then(res => {
           if (!res.ok) throw new Error("Unsplash API Rate Limit or Invalid Key");
           return res.json();
         })
     );
-    
+
     const results = await Promise.all(promises);
-    
+
     imageElements.forEach((img, index) => {
       if (results[index] && results[index].urls) {
         // Add a smooth fade out/in effect when replacing image
@@ -34,7 +34,7 @@ async function fetchUnsplashImages() {
           opacity: 0, duration: 0.3, onComplete: () => {
             img.src = results[index].urls.regular;
             img.alt = results[index].alt_description || queries[index];
-            gsap.to(img, {opacity: 1, duration: 0.5});
+            gsap.to(img, { opacity: 1, duration: 0.5 });
           }
         });
       }
@@ -104,14 +104,14 @@ for (let i = 0; i < 5; i++) {
   sphere.position.x = (Math.random() - 0.5) * 40;
   sphere.position.y = (Math.random() - 0.5) * 40;
   sphere.position.z = (Math.random() - 0.5) * 40;
-  
+
   // Random speeds
   sphere.userData = {
     xRot: Math.random() * 0.01,
     yRot: Math.random() * 0.01,
     ySpd: (Math.random() - 0.5) * 0.05
   };
-  
+
   scene.add(sphere);
   spheres.push(sphere);
 }
@@ -160,17 +160,17 @@ window.addEventListener('resize', () => {
 const tl = gsap.timeline();
 
 // Staggered reveal for Navbar
-tl.from('.navbar .logo-container', { x: -50, opacity: 0, duration: 1, ease: 'power3.out' })
-  .from('.navbar .nav-links a', { y: -20, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)' }, "-=0.5")
-  .from('.hero-title', { y: 50, opacity: 0, scale: 0.9, duration: 1.2, ease: 'expo.out' }, "-=0.3")
-  .from('.hero-subtitle', { y: 30, opacity: 0, duration: 1, ease: 'power2.out' }, "-=0.8")
-  .from('.hero-btn', { y: 20, opacity: 0, duration: 0.6, ease: 'back.out(2)' }, "-=0.5")
+tl.from('.navbar .logo-container', { x: -50, opacity: 0, duration: 1, ease: 'power3.out', clearProps: 'all' })
+  .from('.navbar .nav-links a', { y: -20, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)', clearProps: 'all' }, "-=0.5")
+  .from('.hero-title', { y: 50, opacity: 0, scale: 0.9, duration: 1.2, ease: 'expo.out', clearProps: 'all' }, "-=0.3")
+  .from('.hero-subtitle', { y: 30, opacity: 0, duration: 1, ease: 'power2.out', clearProps: 'all' }, "-=0.8")
+  .from('.hero-btn', { y: 20, opacity: 0, duration: 0.6, ease: 'back.out(2)', clearProps: 'all' }, "-=0.5")
   .from(particlesMesh.position, { y: -30, duration: 2, ease: 'power2.out' }, "-=1.5");
 
 // Enhanced Scroll Animations
 gsap.utils.toArray('.service-card').forEach((card, i) => {
   const img = card.querySelector('img');
-  
+
   // Card Entrance
   gsap.from(card, {
     scrollTrigger: {
@@ -254,7 +254,7 @@ const formError = document.getElementById('form-error');
 if (bookingForm) {
   bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     // Disable button to prevent double submission
     const originalBtnText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
@@ -270,7 +270,7 @@ if (bookingForm) {
 
     // Send to N8N webhook
     const webhookUrl = import.meta.env?.VITE_N8N_WEBHOOK_URL || 'YOUR_N8N_WEBHOOK_URL_HERE';
-    
+
     try {
       const response = await fetch(webhookUrl, {
         method: 'POST',
@@ -284,11 +284,11 @@ if (bookingForm) {
         // Success
         bookingForm.classList.add('hidden');
         formSuccess.classList.remove('hidden');
-        
+
         // GSAP animation for the success message (ensure GSAP is loaded)
         if (typeof gsap !== 'undefined') {
-          gsap.fromTo(formSuccess, 
-            { opacity: 0, y: 20 }, 
+          gsap.fromTo(formSuccess,
+            { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
           );
         }
