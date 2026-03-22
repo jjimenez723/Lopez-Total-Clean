@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./L (Logo).png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Residential Cleaning - Lopez Total Clean</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- Three.js Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <img src="./L (Logo).png" alt="Lopez Total Clean Logo" class="logo" />
+          <span class="brand-name">Lopez Total Clean</span>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact" class="btn-primary">Get a Quote</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1 class="hero-title">Residential Cleaning</h1>
+          <p class="hero-subtitle">Top-tier home cleaning using eco-friendly products.</p>
+          <a href="index.html#contact" class="btn-primary hero-btn">Book Now</a>
+        </div>
+      </section>
+
+      <!-- Details Section -->
+      <section class="about" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: left;">
+          <h2>Your Home, Pristinely Cleaned</h2>
+          <p style="margin-top: 1.5rem; line-height: 1.8;">
+            A clean home is a happy home. At Lopez Total Clean, we understand that life gets busy, and keeping up with housework can be overwhelming. Our residential cleaning services are designed to give you back your time.
+          </p>
+          <p style="margin-top: 1.5rem; line-height: 1.8;">
+            Using eco-friendly, family-safe products, our professional team will dust, vacuum, mop, and sanitize every room in your house. Whether you need weekly, bi-weekly, or monthly cleaning, we customize our plans to fit your schedule and lifestyle. Our trained specialists handle your home with the utmost care and attention to detail.
+          </p>
+          <ul style="margin-top: 2rem; line-height: 2; list-style-type: none; padding-left: 0;">
+            <li>✨ <strong>Living Spaces:</strong> Dusting all surfaces, vacuuming carpets, mopping hard floors.</li>
+            <li>✨ <strong>Kitchens:</strong> Sanitizing countertops, cleaning sinks, wiping down appliances.</li>
+            <li>✨ <strong>Bathrooms:</strong> Scrubbing showers and tubs, disinfecting toilets, polishing mirrors.</li>
+            <li>✨ <strong>Bedrooms:</strong> Making beds, dusting furniture, emptying trash.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Call to Action -->
+      <section class="cta" id="contact">
+        <h2>Ready for a spotless home?</h2>
+        <a href="mailto:contact@lopeztotalclean.com" class="btn-primary cta-btn">Contact Us Today</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Lopez Total Clean. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
