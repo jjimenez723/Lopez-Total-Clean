@@ -227,7 +227,7 @@ gsap.from('.cta h2', {
   scrollTrigger: { trigger: '.cta', start: 'top 85%' },
   y: 50, opacity: 0, duration: 1, ease: 'power3.out'
 });
-gsap.from('.cta-btn', {
+gsap.from('.form-submit-btn', {
   scrollTrigger: { trigger: '.cta', start: 'top 80%' },
   scale: 0.8, opacity: 0, duration: 0.6, ease: 'back.out(2)', delay: 0.3
 });
@@ -266,6 +266,7 @@ if (bookingForm) {
 
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
+    data.dateSent = new Date().toISOString();
 
     // Send to N8N webhook
     const webhookUrl = import.meta.env?.VITE_N8N_WEBHOOK_URL || 'YOUR_N8N_WEBHOOK_URL_HERE';
