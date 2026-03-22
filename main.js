@@ -266,7 +266,8 @@ if (bookingForm) {
 
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
-    data.dateSent = new Date().toISOString();
+    const now = new Date();
+    data.dateSent = `${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}-${now.getFullYear()}`;
 
     // Send to N8N webhook
     const webhookUrl = import.meta.env?.VITE_N8N_WEBHOOK_URL || 'YOUR_N8N_WEBHOOK_URL_HERE';
