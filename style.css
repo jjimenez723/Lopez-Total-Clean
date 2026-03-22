@@ -393,10 +393,83 @@ section {
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem;
   background-color: var(--color-blue-dark);
   color: var(--color-white);
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-left {
+  max-width: 400px;
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.footer-left .logo-container {
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  /* Make the logo white if it comes as dark text/black shape usually */
+  /* filter: brightness(0) invert(1); */
+}
+
+.footer-brand-name {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-blue-dark);
+  letter-spacing: -0.5px;
+}
+
+.footer-description {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: right;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  transition: color var(--transition-speed);
+}
+
+.footer-links a:hover {
+  color: var(--color-blue-light);
+}
+
+.footer-bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
 }
 
 /* Responsiveness */
@@ -437,5 +510,20 @@ footer {
   
   section {
     padding: 4rem 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left .logo-container {
+    justify-content: center;
+  }
+
+  .footer-links {
+    text-align: center;
+    align-items: center;
   }
 }
