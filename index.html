@@ -40,6 +40,9 @@
           <p class="hero-subtitle">Premium residential and commercial cleaning tailored for you.</p>
           <a href="#services" class="btn-primary hero-btn">Explore Our Services</a>
         </div>
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Spotless interior living space" class="hero-img" />
+        </div>
       </section>
 
       <!-- Services Section with Unsplash Images -->
@@ -52,9 +55,9 @@
         <div class="service-grid">
           <!-- House Cleaning -->
           <div class="service-card">
-            <div class="img-container">
+            <a href="residential-cleaning.html" class="img-container" style="display: block;">
               <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" alt="House Cleaning" />
-            </div>
+            </a>
             <div class="service-info">
               <h3>Residential Cleaning</h3>
               <p>Top-tier home cleaning using eco-friendly products.</p>
@@ -62,9 +65,9 @@
           </div>
           <!-- Commercial Cleaning -->
           <div class="service-card">
-            <div class="img-container">
+            <a href="commercial-spaces.html" class="img-container" style="display: block;">
               <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop" alt="Commercial Cleaning" />
-            </div>
+            </a>
             <div class="service-info">
               <h3>Commercial Spaces</h3>
               <p>Professional janitorial services for a pristine workspace.</p>
@@ -72,9 +75,9 @@
           </div>
           <!-- Deep Cleaning -->
           <div class="service-card">
-            <div class="img-container">
+            <a href="deep-cleaning.html" class="img-container" style="display: block;">
               <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Deep Cleaning" />
-            </div>
+            </a>
             <div class="service-info">
               <h3>Deep Cleaning</h3>
               <p>Thorough sanitization to reach every corner.</p>
@@ -91,10 +94,69 @@
         </div>
       </section>
 
-      <!-- Call to Action -->
+      <!-- Contact & Booking Section -->
       <section class="cta" id="contact">
-        <h2>Ready for a spotless space?</h2>
-        <a href="mailto:contact@lopeztotalclean.com" class="btn-primary cta-btn">Contact Us Today</a>
+        <div class="booking-container">
+          <div class="booking-content">
+            <h2>Ready for a spotless space?</h2>
+            <p>Book your cleaning service today. Fill out the form below and we'll confirm your appointment.</p>
+          </div>
+          <div class="form-container">
+            <form id="booking-form" class="booking-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="John">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="serviceType">Service Type</label>
+                  <select id="serviceType" name="serviceType" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Residential Cleaning">Residential Cleaning</option>
+                    <option value="Commercial Spaces">Commercial Spaces</option>
+                    <option value="Deep Cleaning">Deep Cleaning</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="preferredDate">Preferred Date</label>
+                  <input type="date" id="preferredDate" name="preferredDate" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="details">Additional Details (Optional)</label>
+                <textarea id="details" name="details" rows="4" placeholder="Tell us more about your cleaning needs..."></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary form-submit-btn">Book Appointment</button>
+            </form>
+            <div id="form-success" class="form-feedback success hidden">
+              <h3>Thank You!</h3>
+              <p>Your booking request has been received. We will contact you shortly to confirm.</p>
+            </div>
+            <div id="form-error" class="form-feedback error hidden">
+              <h3>Oops!</h3>
+              <p>Something went wrong. Please try again later or contact us directly.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 

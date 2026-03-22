@@ -242,3 +242,65 @@ ScrollTrigger.create({
     particlesMesh.rotation.z = self.progress * 0.5;
   }
 });
+
+// ==========================================
+// Booking Form Handling
+// ==========================================
+const bookingForm = document.getElementById('booking-form');
+const submitBtn = document.getElementById('submit-btn');
+const formSuccess = document.getElementById('form-success');
+const formError = document.getElementById('form-error');
+
+if (bookingForm) {
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Disable button to prevent double submission
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    // Optional: Hide previous messages
+    formSuccess.classList.add('hidden');
+    formError.classList.add('hidden');
+
+    const formData = new FormData(bookingForm);
+    const data = Object.fromEntries(formData.entries());
+
+    // Send to N8N webhook
+    const webhookUrl = import.meta.env?.VITE_N8N_WEBHOOK_URL || 'YOUR_N8N_WEBHOOK_URL_HERE';
+    
+    try {
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        // Success
+        bookingForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        
+        // GSAP animation for the success message (ensure GSAP is loaded)
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(formSuccess, 
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+          );
+        }
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      console.error('Submission Error:', error);
+      formError.classList.remove('hidden');
+    } finally {
+      // Re-enable button
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
+    }
+  });
+}
