@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Lopez-Total-Clean/assets/L%20(Logo)-BSADgv27.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lopez Total Clean | Premium Cleaning Services</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" crossorigin src="/Lopez-Total-Clean/assets/index-DMslwCWk.js"></script>
+    <link rel="stylesheet" crossorigin href="/Lopez-Total-Clean/assets/index-C3GP3R9c.css">
+  </head>
+  <body>
+    <!-- Three.js Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="/Lopez-Total-Clean/assets/L%20(Logo)-BSADgv27.png" alt="Lopez Total Clean Logo" class="logo" />
+        <span class="brand-name">Lopez Total Clean</span>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn-primary">Get a Quote</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <h1 class="hero-title">Experience Absolute Cleanliness.</h1>
+          <p class="hero-subtitle">Premium residential and commercial cleaning tailored for you.</p>
+          <a href="#services" class="btn-primary hero-btn">Explore Our Services</a>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Spotless interior living space" class="hero-img" />
+        </div>
+      </section>
+
+      <!-- Services Section with Unsplash Images -->
+      <section class="services" id="services">
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Unmatched quality, guaranteed.</p>
+        </div>
+        
+        <div class="service-grid">
+          <!-- House Cleaning -->
+          <div class="service-card">
+            <a href="residential-cleaning.html" class="img-container" style="display: block;">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" alt="House Cleaning" />
+            </a>
+            <div class="service-info">
+              <h3>Residential Cleaning</h3>
+              <p>Top-tier home cleaning using eco-friendly products.</p>
+            </div>
+          </div>
+          <!-- Commercial Cleaning -->
+          <div class="service-card">
+            <a href="commercial-spaces.html" class="img-container" style="display: block;">
+              <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop" alt="Commercial Cleaning" />
+            </a>
+            <div class="service-info">
+              <h3>Commercial Spaces</h3>
+              <p>Professional janitorial services for a pristine workspace.</p>
+            </div>
+          </div>
+          <!-- Deep Cleaning -->
+          <div class="service-card">
+            <a href="deep-cleaning.html" class="img-container" style="display: block;">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop" alt="Deep Cleaning" />
+            </a>
+            <div class="service-info">
+              <h3>Deep Cleaning</h3>
+              <p>Thorough sanitization to reach every corner.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About/Feature Section -->
+      <section class="about" id="about">
+        <div class="about-content">
+          <h2>Why Choose Us?</h2>
+          <p>At Lopez Total Clean, we believe a clean environment is a breath of fresh air. Our expert team leaves nothing to chance.</p>
+        </div>
+      </section>
+
+      <!-- Contact & Booking Section -->
+      <section class="cta" id="contact">
+        <div class="booking-container">
+          <div class="booking-content">
+            <h2>Ready for a spotless space?</h2>
+            <p>Book your cleaning service today. Fill out the form below and we'll confirm your appointment.</p>
+          </div>
+          <div class="form-container">
+            <form id="booking-form" class="booking-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="John">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="serviceType">Service Type</label>
+                  <select id="serviceType" name="serviceType" required>
+                    <option value="" disabled selected>Select a Service</option>
+                    <option value="Residential Cleaning">Residential Cleaning</option>
+                    <option value="Commercial Spaces">Commercial Spaces</option>
+                    <option value="Deep Cleaning">Deep Cleaning</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="preferredDate">Preferred Date</label>
+                  <input type="date" id="preferredDate" name="preferredDate" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="details">Additional Details (Optional)</label>
+                <textarea id="details" name="details" rows="4" placeholder="Tell us more about your cleaning needs..."></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary form-submit-btn">Book Appointment</button>
+            </form>
+            <div id="form-success" class="form-feedback success hidden">
+              <h3>Thank You!</h3>
+              <p>Your booking request has been received. We will contact you shortly to confirm.</p>
+            </div>
+            <div id="form-error" class="form-feedback error hidden">
+              <h3>Oops!</h3>
+              <p>Something went wrong. Please try again later or contact us directly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Lopez Total Clean. All rights reserved.</p>
+    </footer>
+
+  </body>
+</html>
